@@ -1,0 +1,1 @@
+{"version":3,"sources":["dashboard.js"],"names":[],"mappings":"AAAA;AACA","file":"dashboard.js","sourcesContent":["var simplemde = new SimpleMDE();\n"],"sourceRoot":"/source/"}

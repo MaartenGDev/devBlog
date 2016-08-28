@@ -1,0 +1,1 @@
+{"version":3,"sources":["dashboard.scss"],"names":[],"mappings":"AAAA;EACE,oBAAoB,EACrB","file":"dashboard.css","sourcesContent":[".post-input-title{\n  margin-bottom: 10px;\n}"],"sourceRoot":"/source/"}
