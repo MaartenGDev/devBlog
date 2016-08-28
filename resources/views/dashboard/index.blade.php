@@ -13,7 +13,7 @@
                         <td><a href="/dashboard/post/{{$post->id}}" class="btn btn-primary"><i class="fa fa-pencil"></i> <span class="post-action">Edit</span></a></td>
                         <td>
                             <form action="/dashboard/post/{{$post->id}}" method="POST">
-                                    <button class="btn btn-danger">
+                                    <button class="btn btn-danger btn-delete">
                                         <i class="fa fa-trash"></i> <span class="post-action">Delete</span>
                                     </button>
                                 {{ csrf_field() }}
