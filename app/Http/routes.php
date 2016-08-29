@@ -19,11 +19,11 @@ Route::group(['prefix' => 'dashboard','middleware' => ['role:admin']], function 
     Route::get('/', 'DashboardController@index');
 
     Route::get('post/create', 'DashboardController@showCreateForm');
-    Route::post('post/create', 'DashboardController@create');
-
     Route::get('post/{post}', 'DashboardController@showEditForm');
-    Route::patch('post/{post}', 'DashboardController@patch');
-    Route::delete('post/{post}', 'DashboardController@delete');
+
+    Route::post('post', 'PostController@store');
+    Route::patch('post/{post}', 'PostController@patch');
+    Route::delete('post/{post}', 'PostController@delete');
 
 
 });

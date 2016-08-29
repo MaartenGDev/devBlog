@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Foundation\Auth\Access\Authorizable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Bican\Roles\Traits\HasRoleAndPermission;
@@ -9,7 +10,10 @@ use Bican\Roles\Contracts\HasRoleAndPermission as HasRoleAndPermissionContract;
 
 class User extends Authenticatable implements HasRoleAndPermissionContract
 {
-    use HasRoleAndPermission , SoftDeletes;
+    use Authorizable,HasRoleAndPermission, SoftDeletes{
+        HasRoleAndPermission::can as canDo;
+        Authorizable::can insteadof HasRoleAndPermission;
+    }
 
     /**
      * The attributes that are mass assignable.

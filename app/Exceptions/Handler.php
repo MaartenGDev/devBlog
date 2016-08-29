@@ -50,6 +50,12 @@ class Handler extends ExceptionHandler
         if ($e instanceof RoleDeniedException) {
             return redirect()->back();
         }
+        if($e instanceof AuthorizationException){
+            return redirect()
+                ->back()
+                ->withErrors('You don\'t have the permission for this action');
+        }
+
         if ($e instanceof NotFoundHttpException){
             return response(view('errors.404'), 404);
         }
