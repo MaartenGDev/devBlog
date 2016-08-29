@@ -13,10 +13,10 @@
                 <span class="bar"></span>
                 <label>Title</label>
             </div>
-            @if ($errors->has('content'))
-                <strong>{{ $errors->first('content') }}</strong>
+            @if ($errors->has('body'))
+                <strong>{{ $errors->first('body') }}</strong>
             @endif
-            <textarea class="editor" name="content" rows="10"></textarea>
+            <textarea class="editor" name="body" rows="10">{{ old('body') }}</textarea>
 
             <button class="btn btn-default btn-margin">Save</button>
             {{ csrf_field() }}
