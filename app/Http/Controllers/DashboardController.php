@@ -9,16 +9,18 @@ class DashboardController extends Controller
 
     public function index()
     {
-        return view('dashboard.index', array('posts' => Post::all()));
+        return view('dashboard.index', ['posts' => Post::all(), 'containerClass' => 'overflow-card']);
     }
 
     public function showCreateForm()
     {
-        return view('post.create');
+        return view('post.create', ['containerClass' => 'overflow-card'
+        ]);
     }
 
     public function showEditForm(Post $post)
     {
-        return view('post.edit', ['post' => $post]);
+        return view('post.edit', ['post' => $post, 'containerClass' => 'overflow-card'
+        ]);
     }
 }

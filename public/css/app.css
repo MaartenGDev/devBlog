@@ -1,7 +1,7 @@
 body {
-  background-color: #F1F2F2;
+  background-color: #FFFFFF;
   margin: 0;
-  font-family: sans-serif; }
+  font-family: 'Open Sans', sans-serif; }
 
 .link {
   color: #07a; }
@@ -60,10 +60,13 @@ body {
   height: 120px; }
 
 /* Main Content */
-div.md-container {
+.md-container {
   color: #424242 !important;
   max-width: 960px;
   margin: 20px auto 0 auto; }
+
+div.overflow-card {
+  margin-top: -50px; }
 
 .md-card {
   background-color: white;
@@ -229,6 +232,17 @@ li.open-menu {
   display: inline-block; }
   .image-page-header img {
     width: 100%; }
+
+article {
+  text-align: center;
+  font-family: "Open Sans", sans-serif; }
+  article h1 {
+    font-size: 50px;
+    margin-bottom: 0; }
+  article section {
+    font-size: 18px;
+    text-align: left;
+    margin-top: 50px; }
 
 /*
     Special Input

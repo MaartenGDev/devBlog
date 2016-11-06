@@ -14,20 +14,21 @@ class PostController extends Controller
     public function index()
     {
         return view('post.index', [
-            'posts' => Post::with('user')->get()
+            'posts' => Post::with('user')->get(),
+            'containerClass' => 'overflow-card'
         ]);
     }
 
     public function show($slug)
     {
-        $post = Post::BlogPost()->slug($slug)->first();
+        $post = Post::findBySlug($slug);
 
         if (is_null($post)) {
             throw new NotFoundHttpException;
         }
 
         return view('post.view', [
-            'post' => $post,
+            'post' => $post
         ]);
     }
 

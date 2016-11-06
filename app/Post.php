@@ -29,6 +29,10 @@ class Post extends Model
         return $query->where('type', 0);
     }
 
+    public static function findBySlug($slug){
+        return Post::with('user')->where('slug', $slug)->firstOrFail();
+    }
+
     public static function allPosts()
     {
         return collect(

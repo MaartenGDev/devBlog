@@ -47,9 +47,9 @@
     </div>
 </nav>
 @section('page-header')
-<header class="page-header"></header>
+    <header class="page-header"></header>
 @show
-<div class="md-container md-container-highlight">
+<div class="md-container {{ isset($containerClass) ? $containerClass : '' }}">
     @include('common.notifications')
     @yield('content')
 </div>
