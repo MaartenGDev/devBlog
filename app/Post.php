@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class Post extends Model
 {
-    protected $fillable = ['slug','type','title','body'];
+    protected $fillable = ['slug','type','title','body','thumbnail'];
 
 
     public function getSlug(){

@@ -24,6 +24,4 @@ Route::group(['prefix' => 'dashboard','middleware' => ['role:admin']], function 
     Route::post('post', 'PostController@store');
     Route::patch('post/{post}', 'PostController@patch');
     Route::delete('post/{post}', 'PostController@delete');
-
-
 });

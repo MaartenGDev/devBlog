@@ -1,12 +1,10 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Post;
 
 class DashboardController extends Controller
 {
-
     protected $posts;
 
     public function index()
@@ -16,11 +14,11 @@ class DashboardController extends Controller
 
     public function showCreateForm()
     {
-        return view('dashboard.create');
+        return view('post.create');
     }
 
     public function showEditForm(Post $post)
     {
-        return view('dashboard.edit', ['post' => $post]);
+        return view('post.edit', ['post' => $post]);
     }
 }

@@ -88,7 +88,7 @@ body {
 div.md-container {
   color: #424242 !important;
   max-width: 960px;
-  margin: -50px auto 0 auto;
+  margin: 20px auto 0 auto;
 }
 
 .md-card {
@@ -100,6 +100,7 @@ div.md-container {
   h1, h2, h3 {
     margin-top: 0;
   }
+
   /* Navigation card */
   &-nav {
     padding: 1px 10px !important;
@@ -151,6 +152,7 @@ div.md-container {
     background-color: #27ac9e;
   }
   &-margin {
+    display: block;
     margin-top: 10px;
   }
   &-success {
@@ -303,3 +305,24 @@ li.open-menu {
   }
 }
 
+
+.image-page-header{
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: inline-block;
+  img{
+    width: 100%;
+  }
+  .image-page-header-image{
+    &:before{
+      //content: '';
+      //position: absolute;
+      //width: 100%;
+      //height: 100%;
+      //background: rgba(0,0,0,0.6);
+      //border-radius: 5px;
+      //z-index: 1;
+    }
+  }
+}

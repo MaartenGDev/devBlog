@@ -3,7 +3,7 @@
 @section('content')
     <div class="md-card">
         <h2>Create Post</h2>
-        <form class="editor" action="/dashboard/post" method="POST">
+        <form class="editor" action="/dashboard/post" method="POST" enctype="multipart/form-data">
             @if ($errors->has('title'))
                 <strong>{{ $errors->first('title') }}</strong>
             @endif
@@ -17,9 +17,11 @@
                 <strong>{{ $errors->first('body') }}</strong>
             @endif
             <textarea class="editor" name="body" rows="10">{{ old('body') }}</textarea>
-
+            <input type="file" name="thumbnail">
             <button class="btn btn-default btn-margin">Save</button>
             {{ csrf_field() }}
         </form>
     </div>
+    <script src="{{ asset('js/simplemde.min.js') }}"></script>
+    <script src="{{ asset('js/dashboard.js') }}"></script>
 @endsection

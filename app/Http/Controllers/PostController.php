@@ -4,36 +4,50 @@ namespace App\Http\Controllers;
 
 use App\Post;
 
+use Date;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class PostController extends Controller
 {
-    public function index(){
-        return view('blog.index', [
-            'posts' => Post::allPosts(),
+    public function index()
+    {
+        return view('post.index', [
+            'posts' => Post::with('user')->get()
         ]);
     }
-    public function show($slug){
+
+    public function show($slug)
+    {
         $post = Post::BlogPost()->slug($slug)->first();
 
-        if(is_null($post)){
+        if (is_null($post)) {
             throw new NotFoundHttpException;
         }
 
-        return view('blog.post', [
+        return view('post.view', [
             'post' => $post,
         ]);
     }
 
     public function store(Request $request)
     {
+        $thumbnail = '';
+
         $validator = Validator::make($request->all(), [
             'title' => 'required|min:5|max:255',
             'body' => 'required|min:5',
         ]);
 
+        if($request->hasFile('thumbnailImage')){
+            $file = $request->file('thumbnailImage');
+            $name = md5(microtime() . $file->getClientOriginalName());
+
+            $fileName = $file->move(storage_path('app/public') . '/images/', $name);
+
+            $thumbnail = '/images/' . $name . '.jpg';
+        }
 
         if ($validator->fails()) {
             return redirect('/dashboard')
@@ -47,13 +61,25 @@ class PostController extends Controller
             'title' => $request->title,
             'body' => $request->body,
             'user_id' => $request->user()->id,
+            'thumbnail' => $thumbnail
         ]);
 
         return redirect('/dashboard')
             ->with('status', 'Post has been created!');
     }
 
-    public function patch(Post $post, Request $request){
+    public function patch(Post $post, Request $request)
+    {
+        $thumbnail = '';
+
+        if($request->hasFile('thumbnailImage')){
+            $file = $request->file('thumbnailImage');
+            $name = md5(microtime() . $file->getClientOriginalName());
+
+            $file->move(storage_path('app/public') . '/images/', $name . '.jpg');
+
+            $thumbnail = '/images/' . $name . '.jpg';
+        }
 
         $validator = Validator::make($request->all(), [
             'title' => 'required|min:5|max:255',
@@ -66,7 +92,10 @@ class PostController extends Controller
                 ->withErrors($validator);
         }
 
-        $this->authorize('update',$post);
+        $this->authorize('update', $post);
+
+
+        $request->request->add(['thumbnail' => $thumbnail]);
 
         $post->update($request->all());
 
@@ -78,7 +107,7 @@ class PostController extends Controller
     public function delete(Post $post)
     {
 
-        $this->authorize('delete',$post);
+        $this->authorize('delete', $post);
 
         $post->delete();
 

@@ -6,8 +6,6 @@
 
 @section('scripts')
     @parent
-    <script src="{{ asset('js/simplemde.min.js') }}"></script>
-    <script src="{{ asset('js/dashboard.js') }}"></script>
 @endsection
 
 @extends('layouts.app')

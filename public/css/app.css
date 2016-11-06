@@ -63,7 +63,7 @@ body {
 div.md-container {
   color: #424242 !important;
   max-width: 960px;
-  margin: -50px auto 0 auto; }
+  margin: 20px auto 0 auto; }
 
 .md-card {
   background-color: white;
@@ -113,6 +113,7 @@ div.md-container {
   .btn:hover {
     background-color: #27ac9e; }
   .btn-margin {
+    display: block;
     margin-top: 10px; }
   .btn-success {
     background-color: #2BBBAD; }
@@ -221,6 +222,14 @@ li.open-menu {
   table td .post-action {
     display: none !important; } }
 
+.image-page-header {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: inline-block; }
+  .image-page-header img {
+    width: 100%; }
+
 /*
     Special Input
     Credits to: http://codepen.io/sevilayha/pen/IdGKH
@@ -229,7 +238,7 @@ li.open-menu {
   position: relative;
   margin-top: 30px; }
 
-input, textarea, div[contenteditable] {
+input[type=text], input[type=password], input[type=email], textarea, div[contenteditable] {
   font-size: 14px;
   padding: 10px 10px 10px 5px;
   display: block;

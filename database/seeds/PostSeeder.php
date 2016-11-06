@@ -16,7 +16,8 @@ class PostSeeder extends Seeder
             'type' => 0,
             'slug' => 'example-slug',
             'title' => 'Hello world',
-            'content' => 'This is the **first** post made with the *Laravel CMS*',
+            'body' => 'This is the **first** post made with the *Laravel CMS*',
+            'thumbnail' => '',
             'user_id' => 1,
             'updated_at' => Carbon::now(),
             'created_at' => Carbon::now()

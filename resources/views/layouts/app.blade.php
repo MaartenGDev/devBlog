@@ -46,8 +46,10 @@
         </ul>
     </div>
 </nav>
+@section('page-header')
 <header class="page-header"></header>
-<div class="md-container">
+@show
+<div class="md-container md-container-highlight">
     @include('common.notifications')
     @yield('content')
 </div>
