@@ -19,6 +19,7 @@ class Post extends Model
         return strip_tags(Markdown::parse($this->attributes['body']),'<strong><i>');
     }
 
+
     public function scopeSlug($query, $slug)
     {
         return $query->where('slug', $slug);

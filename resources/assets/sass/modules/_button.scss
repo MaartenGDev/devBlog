@@ -1,0 +1,48 @@
+a.btn{
+  display: inline-block;
+}
+
+.btn {
+  @include box-shadow();
+  padding: 10px 20px;
+  outline: none;
+  border: none;
+  background-color: #2BBBAD;
+  color: white;
+  text-transform: capitalize;
+  text-decoration: none;
+  font-size: 11px;
+
+  &:hover {
+    background-color: #27ac9e;
+  }
+
+  &-margin {
+    display: block;
+    margin-top: 10px;
+  }
+  &-success {
+    background-color: #2BBBAD;
+    &:hover {
+      background-color: darken(#2BBBAD, 5);
+    }
+  }
+  &-default {
+    background-color: #34495E;
+    &:hover {
+      background-color: darken(#34495E, 5);
+    }
+  }
+  &-primary {
+    background-color: #5DADE2;
+    &:hover {
+      background-color: darken(#5DADE2, 5);
+    }
+  }
+  &-danger {
+    background-color: #E74C3C;
+    &:hover {
+      background-color: darken(#E74C3C, 5);
+    }
+  }
+}

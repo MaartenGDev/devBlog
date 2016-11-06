@@ -13,7 +13,7 @@ class PhotoController extends Controller
 
         return view('photo.index', [
             'photos' => $photos,
-            'containerClass' => 'overflow-card'
+            'containerClass' => 'overflow-card post-list'
         ]);
     }
 

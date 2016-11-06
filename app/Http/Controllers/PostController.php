@@ -73,8 +73,6 @@ class PostController extends Controller
     {
         $this->authorize('update', $post);
 
-        $thumbnail = '';
-
         if($request->hasFile('thumbnailImage')){
             $file = $request->file('thumbnailImage');
             $name = md5(microtime() . $file->getClientOriginalName());
@@ -82,6 +80,8 @@ class PostController extends Controller
             $file->move(storage_path('app/public') . '/images/', $name . '.jpg');
 
             $thumbnail = '/images/' . $name . '.jpg';
+
+            $request->request->add(['thumbnail' => $thumbnail]);
         }
 
         $validator = Validator::make($request->all(), [
@@ -97,7 +97,6 @@ class PostController extends Controller
 
 
 
-        $request->request->add(['thumbnail' => $thumbnail]);
 
         $post->update($request->all());
 

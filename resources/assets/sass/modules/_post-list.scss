@@ -1,0 +1,18 @@
+.post-list {
+  @include box-shadow();
+
+  &__item {
+
+    &__title {
+      margin-top: 0;
+    }
+
+    &__details {
+
+    }
+
+    &__description {
+
+    }
+  }
+}

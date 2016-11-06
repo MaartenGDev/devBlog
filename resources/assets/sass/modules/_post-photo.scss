@@ -1,0 +1,31 @@
+.post-photo {
+  img {
+    max-width: 100%;
+  }
+
+  &__details {
+    text-align: center;
+    margin-bottom: 40px;
+
+  }
+
+  &__detail {
+    &--last{
+      margin-left: 10px;
+    }
+  }
+
+  &__title {
+    font-size: 50px;
+    margin-bottom: 0;
+    font-weight: 100;
+  }
+
+  &__photo-preview {
+    max-height: 200px;
+    overflow: hidden;
+  }
+
+  &__body {
+  }
+}
