@@ -13,15 +13,27 @@
 Route::auth();
 
 Route::get('/', 'PostController@index');
-Route::get('/post/{slug}', 'PostController@show');
+Route::get('posts/{slug}', 'PostController@show');
 
-Route::group(['prefix' => 'dashboard','middleware' => ['role:admin']], function () {
+Route::group(['prefix' => 'dashboard', 'middleware' => ['role:admin']], function () {
     Route::get('/', 'DashboardController@index');
 
-    Route::get('post/create', 'DashboardController@showCreateForm');
-    Route::get('post/{post}', 'DashboardController@showEditForm');
+    Route::get('posts', 'DashboardController@index');
+    Route::get('posts/create', 'DashboardController@showCreateForm');
+    Route::get('posts/{post}', 'DashboardController@showEditForm');
 
-    Route::post('post', 'PostController@store');
-    Route::patch('post/{post}', 'PostController@patch');
-    Route::delete('post/{post}', 'PostController@delete');
+    Route::post('posts', 'PostController@store');
+    Route::patch('posts/{post}', 'PostController@patch');
+    Route::delete('posts/{post}', 'PostController@delete');
+
+
+    Route::get('photos', 'PhotoController@index');
+    Route::get('photos/create', 'PhotoController@create');
+    Route::get('photos/{photo}', 'PhotoController@view');
+    Route::get('photos/{photo}/edit', 'PhotoController@edit');
+
+    Route::post('photos', 'PhotoController@store');
+    Route::patch('photos/{photo}', 'PhotoController@patch');
+    Route::delete('photos/{photo}', 'PhotoController@delete');
 });
+

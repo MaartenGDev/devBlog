@@ -239,10 +239,19 @@ article {
   article h1 {
     font-size: 50px;
     margin-bottom: 0; }
+  article img {
+    max-width: 100%; }
   article section {
     font-size: 18px;
     text-align: left;
     margin-top: 50px; }
+
+.photo-card img {
+  max-width: 100%; }
+
+.photo-card .photo-preview {
+  max-height: 200px;
+  overflow: hidden; }
 
 /*
     Special Input

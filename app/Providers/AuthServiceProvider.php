@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Photo;
+use App\Policies\PhotoPolicy;
 use App\Policies\PostPolicy;
 use App\Post;
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
@@ -15,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        Post::class => PostPolicy::class
+        Post::class => PostPolicy::class,
+        Photo::class => PhotoPolicy::class
     ];
 
     /**

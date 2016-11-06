@@ -9,10 +9,10 @@
                 @foreach($posts as $post)
                     <tr>
                         <td>{{$post->title}}</td>
-                        <td><a target="_blank" href="/post/{{$post->slug}}" class="btn btn-default"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span class="post-action">View</span></a></td>
-                        <td><a href="/dashboard/post/{{$post->id}}" class="btn btn-primary"><i class="fa fa-pencil"></i> <span class="post-action">Edit</span></a></td>
+                        <td><a target="_blank" href="/posts/{{$post->slug}}" class="btn btn-default"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <span class="post-action">View</span></a></td>
+                        <td><a href="/dashboard/posts/{{$post->id}}" class="btn btn-primary"><i class="fa fa-pencil"></i> <span class="post-action">Edit</span></a></td>
                         <td>
-                            <form action="/dashboard/post/{{$post->id}}" method="POST">
+                            <form action="/dashboard/posts/{{$post->id}}" method="POST">
                                     <button class="btn btn-danger btn-delete">
                                         <i class="fa fa-trash"></i> <span class="post-action">Delete</span>
                                     </button>

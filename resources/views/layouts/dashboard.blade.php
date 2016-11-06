@@ -11,6 +11,8 @@
 @extends('layouts.app')
 @section('navigation')
     <li class="nav-item nav-left"><a href="{{ url('/dashboard') }}">Dashboard</a></li>
+    <li class="nav-item nav-left"><a href="{{ url('/dashboard/posts') }}">Posts</a></li>
+    <li class="nav-item nav-left"><a href="{{ url('/dashboard/photos') }}">Photos</a></li>
 @endsection
 @section('content')
     @parent

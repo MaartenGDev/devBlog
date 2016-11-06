@@ -3,7 +3,7 @@
 @section('content')
     <div class="md-card">
         <h2>Edit Post</h2>
-        <form action="/dashboard/post/{{$post->id}}" method="POST" enctype="multipart/form-data">
+        <form action="/dashboard/posts/{{$post->id}}" method="POST" enctype="multipart/form-data">
             @if ($errors->has('title'))
                 <strong>{{ $errors->first('title') }}</strong>
             @endif

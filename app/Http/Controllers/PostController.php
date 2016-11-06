@@ -71,6 +71,8 @@ class PostController extends Controller
 
     public function patch(Post $post, Request $request)
     {
+        $this->authorize('update', $post);
+
         $thumbnail = '';
 
         if($request->hasFile('thumbnailImage')){
@@ -93,7 +95,6 @@ class PostController extends Controller
                 ->withErrors($validator);
         }
 
-        $this->authorize('update', $post);
 
 
         $request->request->add(['thumbnail' => $thumbnail]);
@@ -107,7 +108,6 @@ class PostController extends Controller
 
     public function delete(Post $post)
     {
-
         $this->authorize('delete', $post);
 
         $post->delete();

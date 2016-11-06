@@ -2,9 +2,9 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Indal\Markdown\Facade as Markdown;
 
 class Post extends Model
 {
@@ -13,6 +13,10 @@ class Post extends Model
 
     public function getSlug(){
         return str_slug($this->attributes['title']);
+    }
+
+    public function getPreviewAttribute(){
+        return strip_tags(Markdown::parse($this->attributes['body']),'<strong><i>');
     }
 
     public function scopeSlug($query, $slug)

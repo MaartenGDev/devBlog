@@ -37,4 +37,9 @@ class User extends Authenticatable implements HasRoleAndPermissionContract
     {
         return $this->hasMany(Post::class);
     }
+
+    public function photos()
+    {
+        return $this->hasMany(Photo::class);
+    }
 }
