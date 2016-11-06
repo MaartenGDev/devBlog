@@ -10,7 +10,7 @@
             </p>
             <section class="post-list__description">
                 <p class="post-content">{!! $post->preview !!}</p>
-                <a href="/posts/{{$post->slug}}" class="btn btn-default read-more">READ MORE</a>
+                <a href="/posts/{{$post->slug}}" class="btn btn-default read-more post-list__button">READ MORE</a>
             </section>
         </article>
     @endforeach

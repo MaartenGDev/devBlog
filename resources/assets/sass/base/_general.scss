@@ -8,17 +8,6 @@
 .hidden{
   display: none;
 }
-/* Overlay */
-.overlay {
-  position: absolute;
-  z-index: 1;
-  background-color: black;
-  width: 100%;
-  opacity: 0.7;
-  height: 100%;
-  display: none;
-}
-
 .nav-bar {
   background-color: #303F9F;
   /* Hide Mobile Icons */
@@ -135,69 +124,9 @@ div.overflow-card{
 }
 
 /*
-    Flat Buttons
-*/
-.btn {
-  padding: 10px 20px;
-  outline: none;
-  border: none;
-  @include materialCard;
-  background-color: #2BBBAD;
-  color: white;
-  text-transform: capitalize;
-  text-decoration: none;
-  &:hover {
-    background-color: #27ac9e;
-  }
-  &-margin {
-    display: block;
-    margin-top: 10px;
-  }
-  &-success {
-    background-color: #2BBBAD;
-    &:hover {
-      background-color: darken(#2BBBAD, 5);
-    }
-  }
-  &-default {
-    background-color: #34495E;
-    &:hover {
-      background-color: darken(#34495E, 5);
-    }
-  }
-  &-primary {
-    background-color: #5DADE2;
-    &:hover {
-      background-color: darken(#5DADE2, 5);
-    }
-  }
-  &-danger {
-    background-color: #E74C3C;
-    &:hover {
-      background-color: darken(#E74C3C, 5);
-    }
-  }
-}
-
-/*
   Flash messages:
 */
-.flash {
-  padding: 10px;
-  @include materialCard;
-  background-color: white;
-  margin-bottom: 10px;
 
-  p {
-    margin: 10px;
-  }
-  &-success {
-    border-left: 5px solid #1ABC9C;
-  }
-  &-error {
-    border-left: 5px solid #E74C3C;
-  }
-}
 
 /* Table */
 table {

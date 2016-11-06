@@ -1,16 +1,6 @@
 .hidden {
   display: none; }
 
-/* Overlay */
-.overlay {
-  position: absolute;
-  z-index: 1;
-  background-color: black;
-  width: 100%;
-  opacity: 0.7;
-  height: 100%;
-  display: none; }
-
 .nav-bar {
   background-color: #303F9F;
   /* Hide Mobile Icons */ }
@@ -94,54 +84,8 @@ div.overflow-card {
       text-decoration: none; }
 
 /*
-    Flat Buttons
-*/
-.btn {
-  padding: 10px 20px;
-  outline: none;
-  border: none;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  background-color: #2BBBAD;
-  color: white;
-  text-transform: capitalize;
-  text-decoration: none; }
-  .btn:hover {
-    background-color: #27ac9e; }
-  .btn-margin {
-    display: block;
-    margin-top: 10px; }
-  .btn-success {
-    background-color: #2BBBAD; }
-    .btn-success:hover {
-      background-color: #26a69a; }
-  .btn-default {
-    background-color: #34495E; }
-    .btn-default:hover {
-      background-color: #2b3c4e; }
-  .btn-primary {
-    background-color: #5DADE2; }
-    .btn-primary:hover {
-      background-color: #47a2de; }
-  .btn-danger {
-    background-color: #E74C3C; }
-    .btn-danger:hover {
-      background-color: #e43725; }
-
-/*
   Flash messages:
 */
-.flash {
-  padding: 10px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-  background-color: white;
-  margin-bottom: 10px; }
-  .flash p {
-    margin: 10px; }
-  .flash-success {
-    border-left: 5px solid #1ABC9C; }
-  .flash-error {
-    border-left: 5px solid #E74C3C; }
-
 /* Table */
 table td + td,
 table th + th {
@@ -228,6 +172,15 @@ li.open-menu {
 body {
   margin: 0; }
 
+.overlay {
+  position: absolute;
+  z-index: 1;
+  background-color: black;
+  width: 100%;
+  opacity: 0.7;
+  height: 100%;
+  display: none; }
+
 .article {
   text-align: center;
   font-family: "Open Sans", sans-serif; }
@@ -268,6 +221,8 @@ body {
 
 .post-list {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
+  .post-list__item__button {
+    font-size: 11px; }
   .post-list__item__title {
     margin-top: 0; }
 
@@ -283,7 +238,7 @@ a.btn {
   color: white;
   text-transform: capitalize;
   text-decoration: none;
-  font-size: 11px; }
+  font-size: 14px; }
   .btn:hover {
     background-color: #27ac9e; }
   .btn-margin {
@@ -306,9 +261,20 @@ a.btn {
     .btn-danger:hover {
       background-color: #e43725; }
 
-body {
-  background-color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif; }
+.flash {
+  padding: 10px;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  background-color: white;
+  margin-bottom: 10px; }
+  .flash p {
+    margin: 10px; }
+  .flash--success {
+    border-left: 5px solid #1ABC9C; }
+  .flash--error {
+    border-left: 5px solid #E74C3C; }
+
+.post__input-title {
+  margin-bottom: 10px; }
 
 /*
     Special Input
@@ -378,5 +344,13 @@ input:focus ~ label, input:valid ~ label, textarea:focus ~ label, textarea:valid
 
 input:focus ~ .bar:before, input:focus ~ .bar:after, textarea:focus ~ .bar:before, textarea:focus ~ .bar:after, div[contenteditable]:focus ~ .bar:before, div[contenteditable]:focus ~ .bar:after {
   width: 50%; }
+
+/* Shame CSS */
+.post-list__button {
+  font-size: 11px !important; }
+
+body {
+  background-color: #FFFFFF;
+  font-family: 'Open Sans', sans-serif; }
 
 /*# sourceMappingURL=app.css.map */

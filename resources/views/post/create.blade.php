@@ -7,7 +7,7 @@
             @if ($errors->has('title'))
                 <strong>{{ $errors->first('title') }}</strong>
             @endif
-            <div class="group post-input-title">
+            <div class="group post__input-title">
                 <input type="text" name="title">
                 <span class="highlight"></span>
                 <span class="bar"></span>

@@ -3,10 +3,17 @@
 
 @import 'helpers/mixins';
 
+@import 'modules/overlay';
 @import 'modules/article';
 @import 'modules/post-photo';
 @import 'modules/card';
 @import 'modules/post-list';
 @import 'modules/button';
+@import 'modules/flash';
+@import 'modules/post';
+@import 'modules/input';
+
+/* Shame CSS */
+@import 'shame.scss';
 
 @import 'themes/default';

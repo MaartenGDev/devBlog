@@ -4,7 +4,7 @@
     <div class="md-card photo-card">
         <h2>Update Photo</h2>
         <form class="editor" action="/dashboard/photos/{{$photo->id}}" method="POST" enctype="multipart/form-data">
-            <div class="group post-input-title">
+            <div class="group post__input-title">
                 <input type="text" name="name" value="{{ $photo->name }}">
                 <span class="highlight"></span>
                 <span class="bar"></span>
